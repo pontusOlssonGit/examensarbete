@@ -1,0 +1,63 @@
+body{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.game-header{
+    margin-top: 8vh;
+    background-color: white;
+    font-family: 'Pacifico', cursive;
+    font-family: 'RocknRoll One', sans-serif;
+}
+.game-h-text{
+    padding-top: 2vh;
+}
+.game-h-text-points{
+    padding-top: 2vh;
+    text-align: right;
+}
+.game-main{
+    margin-top: 2vh;
+    background-color: white;
+    min-height: 50vh;
+    font-family: 'RocknRoll One', sans-serif;
+}
+.question{
+    padding-top:15vh;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.game-alternatives{
+    margin-top: 2vh;
+    background-color: white;
+    min-height: 20vh;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+.btn-a, .btn-b, .btn-c, .btn-d{
+    transition: ease-in-out 500ms;
+    border-radius: 0;
+    min-width: 10rem;
+    color:white;
+    border:none;
+    margin-top: 2vh;
+    min-height: 16vh;
+}
+.btn-a{
+    background-color: #f72585;
+}
+.btn-b{
+    background-color: #4cc9f0;
+}
+.btn-c{
+    background-color: #f5cc45;
+}
+.btn-d{
+    background-color: #39eb89;
+}
+

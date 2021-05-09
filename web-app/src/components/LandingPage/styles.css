@@ -1,0 +1,90 @@
+body{
+    overflow-x: hidden;
+}
+.quizland-logo{
+    font-size: 2.5rem;
+    color: #f72585 !important;
+    font-family: 'Pacifico', cursive;
+    text-align: left;
+}
+.nav-link{
+    color: white;
+    
+   
+}
+.small-link{
+    font-size: 12px;
+}
+.small-link:hover{
+    color: #4cc9f0;
+}
+.welcome{
+    margin-top: 1vh;
+    font-size: 3rem;
+}
+
+.container-content{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    min-height: 50vh;
+    text-align: center;
+    color:white;
+}
+.container-bottom{
+    padding-top: 6vh;
+    text-align: center;
+    
+    
+}
+.container-lower{
+    margin-top: 10vh;
+    text-align: center;
+}
+.container-lowest{
+    margin-top: 10vh;
+    margin-bottom: 8vh;
+}
+
+h2,h3,h5{
+    font-family: 'RocknRoll One', sans-serif;
+}
+.p-text{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'RocknRoll One', sans-serif;
+
+}
+.btn-left, .btn-right{
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 12px;
+    transition: ease-in-out 500ms;
+    border-radius: 0;
+    min-width: 10rem;
+    min-height: 2rem;
+    margin-top: 2vh;
+    color:white;
+    border:none;
+}
+.btn-left{
+    background-color: #f72585;
+}
+.btn-right{
+    background-color: #4cc9f0;
+}
+
+.btn-left:hover{
+    transition: ease-in-out 300ms;
+    transform: translateY(-3px);
+}
+
+
+.btn-right:hover{
+    transition: ease-in-out 300ms;
+    transform: translateY(-3px);
+}
+
+.text-lower, .text-lowest{
+    padding-top: 2vh;
+}
