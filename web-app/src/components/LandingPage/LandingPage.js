@@ -6,7 +6,6 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                <link ></link>
                 <div className="container-content">
 
                     <div className="row">
