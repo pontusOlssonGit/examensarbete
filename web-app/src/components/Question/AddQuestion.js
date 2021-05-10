@@ -1,17 +1,34 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { createQuestion } from '../../actions/questionActions'
 
 class AddQuestion extends Component {
     constructor(){
         super()
         
         this.state={
-            "question":"",
-            "category":"",
-            "correctAnswer":""
+            question:"",
+            category:"",
+            correctAnswer:"",
+            errors:{}
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+
+    
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.errors !== nextProps.errros) {
+          return {
+            errors: nextProps.errors
+          };
+        }
+        // Return null to indicate no change to state.
+        return null;
+      }
+    
+    
     onChange(e){
         this.setState({ [e.target.name]: e.target.value});
     };
@@ -23,11 +40,13 @@ class AddQuestion extends Component {
             correctAnswer:this.state.correctAnswer
         }
 
-        console.log(newQuestion);
+        this.props.createQuestion(newQuestion, this.props.history)
     }
     render() {
+        const{errors} = this.state;
         return (
-            <div>
+            <div className="container">
+                
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group mt-5">
                         <label>Question</label>
@@ -39,6 +58,7 @@ class AddQuestion extends Component {
                             value={this.state.question}
                             onChange = {this.onChange}
                             placeholder="Enter Question"/>
+                            <p className="text-danger">{errors.question}</p>
                     </div>
                     <div className="form-group">
                         <label>Category</label>
@@ -50,6 +70,7 @@ class AddQuestion extends Component {
                             value={this.state.category}
                             onChange = {this.onChange}
                             placeholder="Enter Category"/>
+                            <p className="text-danger">{errors.category}</p>
                     </div>
                     <div className="form-group">
                         <label>Correct Answer</label>
@@ -68,4 +89,12 @@ class AddQuestion extends Component {
         )
     }
 }
-export default AddQuestion;
+AddQuestion.propTypes = {
+    createQuestion:PropTypes.func.isRequired,
+    errors:PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    errors:state.errors
+})
+export default  connect(mapStateToProps, {createQuestion}) (AddQuestion);

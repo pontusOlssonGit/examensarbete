@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/question")
+@CrossOrigin
 public class QuestionController {
 
     @Autowired
