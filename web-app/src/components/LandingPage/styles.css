@@ -56,22 +56,22 @@ h2,h3,h5{
     font-family: 'RocknRoll One', sans-serif;
 
 }
-.btn-left, .btn-right{
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 12px;
-    transition: ease-in-out 500ms;
-    border-radius: 0;
-    min-width: 10rem;
-    min-height: 2rem;
-    margin-top: 2vh;
-    color:white;
-    border:none;
+.btn-left, .btn-right{ 
+    font-family: 'RocknRoll One', sans-serif !important;
+    font-size: 12px !important;
+    transition: ease-in-out 500ms !important;
+    border-radius: 0 !important;
+    min-width: 10rem !important;
+    min-height: 2rem !important;
+    margin-top: 2vh !important;
+    color:white!important;
+    border:none!important;
 }
 .btn-left{
-    background-color: #f72585;
+    background-color: #f72585 !important;
 }
 .btn-right{
-    background-color: #4cc9f0;
+    background-color: #4cc9f0 !important;
 }
 
 .btn-left:hover{
@@ -81,7 +81,7 @@ h2,h3,h5{
 
 
 .btn-right:hover{
-    transition: ease-in-out 300ms;
+    transition: ease-in-out 300ms; 
     transform: translateY(-3px);
 }
 

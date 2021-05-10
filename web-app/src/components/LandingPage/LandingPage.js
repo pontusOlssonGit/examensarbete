@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import styles from './styles.css'
+import Header from '../Layout/Header';
+import './styles.css'
 
 
 class LandingPage extends Component {
@@ -8,23 +9,7 @@ class LandingPage extends Component {
             <div>
                 <div className="container-content">
 
-                    <div className="row">
-                        <div className="col-8">
-                            <a className="nav-link quizland-logo" href="/">Quizland</a>
-                        </div>
-                        <div className="col-1">
-                            <a className="nav-link small-link" href="/">Login</a>
-                        </div>
-                        <div className="col-1">
-                            <a className="nav-link small-link" href="/">Signup</a>
-                        </div>
-                        <div className="col-1">
-                            <a className="nav-link small-link" href="/game-room">How To Play</a>
-                        </div>
-                        <div className="col-1">
-                            <a className="nav-link small-link" href="/">About</a>
-                        </div>
-                    </div>
+                    <Header />
 
                     <h2 className="welcome">Welcome to Quizland!</h2>
                     <div className="container-bottom">
@@ -41,8 +26,8 @@ class LandingPage extends Component {
                             <div className="col-3"></div>
                         </div>
                         <div className="col-12">
-                            <button type="button" class="btn btn-left btn-light">Login</button>
-                            <button type="button" class="btn btn-right btn-light">Sign up</button>
+                            <button type="button" className="btn-left btn-light">Login</button>
+                            <button type="button" className="btn-right btn-light">Sign up</button>
                         </div>
                     </div>
                 </div>
