@@ -4,17 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.ArrayList;
 
 @Entity
-public class Quiz {
-
+public class QuestionAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String category;
+    private String answer;
 
-    public Quiz() {
+    public QuestionAnswer() {
     }
 }
+

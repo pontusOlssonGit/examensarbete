@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import AddQuestion from './components/Question/AddQuestion';
 import {Provider} from 'react-redux';
 import store from './store';
+import UpdateQuestion from './components/Question/UpdateQuestion';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/admin-dashboard" component={AdminDashboard}/>
                     <Route exact path="/add-question" component={AddQuestion}/>
+                    <Route exact path="/update-question/:id" component={UpdateQuestion}/>
 
                 </div>
             </Router>

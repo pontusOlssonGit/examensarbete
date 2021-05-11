@@ -35,7 +35,12 @@ public class QuestionController {
     @GetMapping("/{questionId}")
     public ResponseEntity<?> getQuestionById(@PathVariable Long questionId){
         Optional<Question> question = questionService.findById(questionId);
-        return new ResponseEntity<Optional<Question>>(question, HttpStatus.OK);
+        if(question.isPresent()){
+            return new ResponseEntity<Optional<Question>>(question, HttpStatus.OK);
+        }
+        return new ResponseEntity<String>("Question with id " + questionId + " not found", HttpStatus.NOT_FOUND);
+
+
     }
     @GetMapping("/all")
     public Iterable<Question> getAllQuestions(){
