@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { deleteQuestion } from '../../actions/questionActions'
+import { deleteQuestion } from '../../../actions/questionActions'
 
 
 
@@ -20,8 +20,9 @@ class QuestionItem extends Component {
                 <td>{question.question}</td>
                 <td>{question.category}</td>
                 <td>{question.correctAnswer}</td>
-                <td><button className="btn btn-light"><Link to={`/update-question/${question.id}`}>Update</Link></button></td>
-                <td><button onClick={this.onDeleteClick.bind(this,question.id)} className="btn btn-light">Delete</button></td>
+                <td><Link to={`/add-question-answer/${question.id}`}>Add Answer</Link></td>
+                <td><Link to={`/update-question/${question.id}`}>Update</Link></td>
+                <td><a onClick={this.onDeleteClick.bind(this,question.id)}>Delete</a></td>
                 
             </tr>
 

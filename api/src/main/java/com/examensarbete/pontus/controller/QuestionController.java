@@ -2,6 +2,8 @@ package com.examensarbete.pontus.controller;
 
 
 import com.examensarbete.pontus.model.Question;
+import com.examensarbete.pontus.model.QuestionAnswer;
+import com.examensarbete.pontus.service.QuestionAnswerService;
 import com.examensarbete.pontus.service.QuestionService;
 import com.examensarbete.pontus.service.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class QuestionController {
     @Autowired
     ValidationService validationService;
 
+
     @PostMapping("")
     public ResponseEntity<?> createOrUpdateQuestion(@Valid @RequestBody Question question, BindingResult bindingResult){
 
@@ -39,8 +42,6 @@ public class QuestionController {
             return new ResponseEntity<Optional<Question>>(question, HttpStatus.OK);
         }
         return new ResponseEntity<String>("Question with id " + questionId + " not found", HttpStatus.NOT_FOUND);
-
-
     }
     @GetMapping("/all")
     public Iterable<Question> getAllQuestions(){

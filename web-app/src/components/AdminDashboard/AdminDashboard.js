@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import CreateQuestionButton from '../Question/CreateQuestionButton'
-import QuestionItem from '../Question/QuestionItem'
+import CreateQuestionButton from '../QuestionView/Question/CreateQuestionButton'
+import QuestionItem from '../QuestionView/Question/QuestionItem'
 import {connect} from 'react-redux';
 import {getQuestions} from '../../actions/questionActions';
 import PropTypes from 'prop-types'
@@ -25,6 +25,7 @@ class AdminDashboard extends Component {
                             <th scope="col">Question</th>
                             <th scope="col">Category</th>
                             <th scope="col">Correct Answer</th>
+                            <th scope="col">Add answer</th>
                             <th scope="col">Update</th>
                             <th scope="col">Delete</th>
                         </tr>

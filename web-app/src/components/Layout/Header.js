@@ -15,7 +15,9 @@ class Header extends Component {
                         <a className="nav-link small-link" href="/">Signup</a>
                     </div>
                     <div className="col-1">
-                        <a className="nav-link small-link" href="/game-room">How To Play</a>
+                        <Link to="/question-view" className="nav-link small-link">
+                            Question View
+                        </Link>
                     </div>
                     <div className="col-1">
                         <Link to="/admin-dashboard" className="nav-link small-link">

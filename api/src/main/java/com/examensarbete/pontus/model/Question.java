@@ -1,14 +1,13 @@
 package com.examensarbete.pontus.model;
 
+import org.springframework.boot.context.properties.bind.Name;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Question {
@@ -21,7 +20,11 @@ public class Question {
     @NotBlank(message = "Category can't be empty.")
     @Size(min=2, message="Category must be at least two characters long.")
     private String category;
-    private int correctAnswer;
+    @NotBlank(message = "Correct Answer can't be blank")
+    private String correctAnswer;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "question", orphanRemoval=true)
+    private List<QuestionAnswer> questionAnswers = new ArrayList<>();
+
 
 
     public Question() {
@@ -51,11 +54,24 @@ public class Question {
         this.category = category;
     }
 
-    public int getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(int correctAnswer) {
+    public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
+    }
+
+    public List<QuestionAnswer> getQuestionAnswers() {
+        return questionAnswers;
+    }
+
+    public void setQuestionAnswers(List<QuestionAnswer> questionAnswers) {
+        this.questionAnswers = questionAnswers;
+    }
+
+    @Override
+    public String toString() {
+        return this.getId() + "\nQuestion: " + this.getQuestion() + "\nCategory: " + this.category;
     }
 }
