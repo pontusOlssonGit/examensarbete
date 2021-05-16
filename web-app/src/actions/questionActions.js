@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {GET_ERRORS, GET_QUESTIONS, GET_QUESTION, DELETE_QUESTION} from './types';
+import {GET_ERRORS, GET_QUESTIONS, GET_QUESTION, DELETE_QUESTION, GET_QUESTIONS_CATEGORY} from './types';
 
 export const createQuestion = (question, history) => async dispatch => {
     try {
-        const res = await axios.post("/api/question", question)
+        await axios.post("/api/question", question)
         history.push("/admin-dashboard")
         dispatch({type: GET_ERRORS, payload:{}})
     } catch (err) {
@@ -13,6 +13,12 @@ export const createQuestion = (question, history) => async dispatch => {
 export const getQuestions = () => async dispatch => {
     const res = await axios.get("/api/question/all")
     dispatch({type: GET_QUESTIONS, payload: res.data})
+}
+export const getQuestionsCategory = (category) => async dispatch => {
+
+    const res = await axios.get(`/api/question/all/${category}`)
+    dispatch({type: GET_QUESTIONS_CATEGORY, payload: res.data})
+    
 }
 export const getQuestion = (id, history) => async dispatch => {
     try {

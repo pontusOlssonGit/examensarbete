@@ -1,0 +1,8 @@
+.small-link{
+    color:white !important;
+    font-size: 13px !important;
+}
+
+.small-link:hover{
+    color: #4cc9f0 !important;
+}

@@ -43,6 +43,11 @@ public class QuestionController {
         }
         return new ResponseEntity<String>("Question with id " + questionId + " not found", HttpStatus.NOT_FOUND);
     }
+    @GetMapping("/all/{category}")
+    public Iterable<Question> getQuestionsByCategory(@PathVariable String category){
+        return questionService.findAllByCategory(category);
+    }
+
     @GetMapping("/all")
     public Iterable<Question> getAllQuestions(){
         return questionService.findAll();

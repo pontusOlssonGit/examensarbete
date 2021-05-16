@@ -2,7 +2,7 @@ body{
     overflow-x: hidden;
 }
 .quizland-logo{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #f72585 !important;
     font-family: 'Pacifico', cursive;
     text-align: left;
@@ -19,7 +19,7 @@ body{
     color: #4cc9f0;
 }
 .welcome{
-    margin-top: 1vh;
+    margin-top: 5vh;
     font-size: 3rem;
 }
 
@@ -34,6 +34,7 @@ body{
 }
 .container-bottom{
     padding-top: 6vh;
+    padding-bottom: 15vh !important;
     text-align: center;
     
     

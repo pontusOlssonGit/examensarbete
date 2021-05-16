@@ -10,6 +10,8 @@ import UpdateQuestion from './components/QuestionView/Question/UpdateQuestion';
 import QuestionView from './components/QuestionView/QuestionView';
 import CategoryView from './components/QuestionView/CategoryView';
 import AddQuestionAnswer from './components/QuestionView/QuestionAnswer/AddQuestionAnswer';
+import QuestionViewCategory from './components/QuestionView/QuestionViewCategory';
+import GameRoom from './components/GameRoom/GameRoom';
 
 function App() {
     return (
@@ -23,6 +25,8 @@ function App() {
                     <Route exact path="/add-question" component={AddQuestion}/>
                     <Route exact path="/update-question/:id" component={UpdateQuestion}/>
                     <Route exact path="/add-question-answer/:id" component={AddQuestionAnswer}/>
+                    <Route exact path="/category-view/:category" component={QuestionViewCategory}/>
+                    <Route exact path="/game-room/:category" component={GameRoom}/>
 
                 </div>
             </Router>

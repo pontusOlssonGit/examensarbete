@@ -26,6 +26,9 @@ public class QuestionService {
     public Iterable<Question> findAll(){
         return questionRepository.findAll();
     }
+    public Iterable<Question> findAllByCategory(String category){
+        return questionRepository.findAllByCategory(category);
+    }
     public void deleteQuestionById(Long id){
         questionRepository.deleteById(id);
     }

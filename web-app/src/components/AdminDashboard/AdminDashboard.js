@@ -4,6 +4,9 @@ import QuestionItem from '../QuestionView/Question/QuestionItem'
 import {connect} from 'react-redux';
 import {getQuestions} from '../../actions/questionActions';
 import PropTypes from 'prop-types'
+import styles from './AdminDashboard.css'
+import Header from '../Layout/Header';
+import { Link } from 'react-router-dom';
 
 class AdminDashboard extends Component {
 
@@ -14,9 +17,10 @@ class AdminDashboard extends Component {
     render() {
         const {questions} = this.props.question
         return (
-            <div>
-                <h1 className="mb-5">Welcome to the Dashboard</h1>
-                
+            <div className="admin-body">
+                <Header />
+                <h1 className="mb-5 pt-5">Welcome to the Dashboard</h1>
+                <Link to="/question-view">Questions with answers</Link>
                 <CreateQuestionButton />
                 <table className="table mt-5 table-dark">
                     <thead>

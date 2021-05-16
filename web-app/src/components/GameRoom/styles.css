@@ -1,4 +1,4 @@
-body{
+.body-game-room{
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -7,14 +7,19 @@ body{
     overflow-x: hidden;
 }
 
+.start-button-game-room{
+    margin-top: 30vh;
+    color:white;
+}
+
 .game-header{
-    margin-top: 8vh;
     background-color: white;
     font-family: 'Pacifico', cursive;
     font-family: 'RocknRoll One', sans-serif;
 }
 .game-h-text{
     padding-top: 2vh;
+    text-align: left !important;
 }
 .game-h-text-points{
     padding-top: 2vh;
@@ -38,9 +43,21 @@ body{
     min-height: 20vh;
     font-family: 'RocknRoll One', sans-serif;
 }
+.btn-a:hover{
+    background-color: #f7258473;
+}
+.btn-b:hover{
+    background-color: #4ccaf06b;
+}
+.btn-c:hover{
+    background-color: #f5cc456b;
+}
+.btn-d:hover{
+    background-color: #39eb897a;
+}
 
 .btn-a, .btn-b, .btn-c, .btn-d{
-    transition: ease-in-out 500ms;
+    transition: ease-in-out 200ms;
     border-radius: 0;
     min-width: 10rem;
     color:white;
@@ -48,16 +65,84 @@ body{
     margin-top: 2vh;
     min-height: 16vh;
 }
-.btn-a{
-    background-color: #f72585;
+.btn-a-start:hover{
+    transform: translateY(-3px);
 }
-.btn-b{
-    background-color: #4cc9f0;
-}
-.btn-c{
-    background-color: #f5cc45;
-}
-.btn-d{
-    background-color: #39eb89;
+.btn-b-start:hover{
+    transform: translateY(-3px);
 }
 
+.btn-a, .btn-a:focus{
+    background-color: #f72585;
+    color:white;
+}
+.btn-b, .btn-b:focus{
+    background-color: #4cc9f0;
+    color:white;
+}
+.btn-c, .btn-c:focus{
+    background-color: #f5cc45;
+    color:white;
+}   
+.btn-d, .btn-d:focus{
+    background-color: #39eb89;
+    color:white;
+}
+.container-bottom-game-room{
+    text-align: center;
+}
+
+.container-top-game-room{
+    text-align: center;
+}
+.countdown-3{
+    color: #39eb89;
+    font-size: 10rem;
+}
+.countdown-2{
+    color: #f5cc45;
+    font-size: 10rem;
+}
+.countdown-1{
+    color: #4cc9f0;
+    font-size: 10rem;
+}
+.time-left-meter-red{
+    background-color: #f72585;
+    min-height: 2rem;
+    transition: ease-in-out 300ms;
+}
+.left-timer-border{
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+.right-timer-border{
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+.time-left-meter-white{
+    background-color: white;
+    min-height: 2rem;
+    transition: ease-in-out 300ms;
+}
+.time-left-meter-div{
+    margin-top: 1rem;
+    --bs-gutter-x: 0 !important;
+}
+.gutter-time-meter{
+    background-color: white !important;
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+.game-room-summary{
+    margin-top:15vh;
+    min-height: 10vh;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    background-color: white;
+}

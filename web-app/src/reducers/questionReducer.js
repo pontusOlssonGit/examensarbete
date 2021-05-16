@@ -1,4 +1,4 @@
-import { DELETE_QUESTION, GET_QUESTION, GET_QUESTIONS } from '../actions/types';
+import { DELETE_QUESTION, GET_QUESTION, GET_QUESTIONS, GET_QUESTIONS_CATEGORY } from '../actions/types';
 
 const initialState = {
     questions: [],
@@ -12,6 +12,11 @@ export default function(state=initialState, action){
                 ...state,
                 questions:action.payload
             };
+        case GET_QUESTIONS_CATEGORY:
+            return{
+                ...state,
+                questions:action.payload
+            }
         case GET_QUESTION:
             return{
                 ...state,
