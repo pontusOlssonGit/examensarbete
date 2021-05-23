@@ -1,0 +1,40 @@
+.register-body{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+    text-align: center;
+    
+
+}
+
+.quizland-logo{
+    font-size: 3rem;
+    color: #f72585 !important;
+    font-family: 'Pacifico', cursive;
+    text-align: left;
+}
+
+.register-form{
+    background-color: white;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 8vh;
+    margin-bottom: 4.5rem;
+    text-align: left;
+    border-radius: 0.5rem;
+}
+
+.input-custom-style{
+    border-radius: 0 !important;
+    border: 1px solid #ced4da;
+    
+}
+
+.input-custom-style:focus{
+    border-radius: 0 !important;
+    border: 1px solid white;
+    box-shadow: rgba(28, 204, 248, 0.3) 0px 0px 0px 2px;
+    
+}

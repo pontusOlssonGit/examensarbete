@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import Header from '../Layout/Header';
 import './styles.css'
+import Question from './images/question.svg'
+import Winner from './images/winner.svg'
+import { Link } from 'react-router-dom';
+
 
 
 class LandingPage extends Component {
@@ -26,8 +30,12 @@ class LandingPage extends Component {
                             <div className="col-3"></div>
                         </div>
                         <div className="col-12">
+                            <Link to="/login">
                             <button type="button" className="btn-left btn-light">Login</button>
+                            </Link>
+                            <Link to="/register">
                             <button type="button" className="btn-right btn-light">Sign up</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -46,15 +54,17 @@ class LandingPage extends Component {
                                 dolor sit amet, ris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor
                                 sit amet, ris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
-                        <div className="col-4"></div>
-                        <div className="col-2"></div>
+                        <div className="col-5">
+                            <img src={Winner} height="300rem"/>
+                        </div>
+                        <div className="col-1"></div>
 
                     </div>
                 </div>
                 <div className="container-lowest">
                     <div className="row">
-                        <div className="col-2"></div>
-                        <div className="col-4"></div>
+                        <div className="col-1"></div>
+                        <div className="col-5"><img src={Question} height="300rem"/></div>
                         <div className="col-5 text-lowest">
                             <h3>Challenge your friends</h3>
                             <p className="p-text">Lorem ipsum dolor sit amet, ris nisi ut aliquip ex ea commodo

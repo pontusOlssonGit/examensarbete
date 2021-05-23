@@ -12,6 +12,8 @@ import CategoryView from './components/QuestionView/CategoryView';
 import AddQuestionAnswer from './components/QuestionView/QuestionAnswer/AddQuestionAnswer';
 import QuestionViewCategory from './components/QuestionView/QuestionViewCategory';
 import GameRoom from './components/GameRoom/GameRoom';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
     return (
@@ -19,6 +21,13 @@ function App() {
             <Router>
                 <div className="App">
                     <Route exact path="/" component={LandingPage}/>
+                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/register" component={Register}/>
+
+
+
+
+
                     <Route exact path="/question-view" component={QuestionView}/>
                     <Route exact path="/category-view" component={CategoryView}/>
                     <Route exact path="/admin-dashboard" component={AdminDashboard}/>
