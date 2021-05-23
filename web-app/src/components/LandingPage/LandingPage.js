@@ -4,10 +4,19 @@ import './styles.css'
 import Question from './images/question.svg'
 import Winner from './images/winner.svg'
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
 
 
 class LandingPage extends Component {
+
+    componentDidMount(){
+        if(this.props.security.validToken){
+            this.props.history.push("/category-view")
+        }
+    }
+
     render() {
         return (
             <div>
@@ -85,4 +94,10 @@ class LandingPage extends Component {
         )
     }
 }
-export default LandingPage;
+LandingPage.propTypes = {
+    security: PropTypes.object.isRequired
+}
+const mapStateToProps = state =>({
+    security: state.security
+});
+export default connect(mapStateToProps)(LandingPage);

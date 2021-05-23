@@ -18,6 +18,23 @@ class Register extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+
+    componentDidMount(){
+        if(this.props.security.validToken){
+            this.props.history.push("/category-view")
+        }
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.errors !== nextProps.errors) {
+          return {
+            errors: nextProps.errors
+          };
+        }
+
+        // Return null to indicate no change to state.
+        return null;
+    }
     onChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
@@ -34,6 +51,7 @@ class Register extends Component {
         this.props.registerUser(newUser, this.props.history)
     }
     render() {
+        const {errors} = this.state
         return (
             <div className="login-body">
                 <div className="container">
@@ -50,12 +68,13 @@ class Register extends Component {
 
                                 <input
                                     type="email"
-                                    className="form-control input-custom-style"
+                                    className={'form-control input-custom-style ' + (errors.username? 'is-invalid' : '')}
                                     aria-describedby="emailHelp"
                                     name="username"
                                     value={this.state.username}
-                                    placeholder="Email"
+                                    placeholder={(errors.username? `${errors.username}` : 'Email')}
                                     onChange={this.onChange}/>
+                  
                                     
                                 <p className="text-muted mt-1">Email is your username.</p>
                             </div>
@@ -63,10 +82,10 @@ class Register extends Component {
 
                                 <input
                                     type="text"
-                                    className="form-control input-custom-style mb-4"
+                                    className={'form-control input-custom-style mb-4 ' + (errors.fullName? 'is-invalid' : '')}
                                     name="fullName"
                                     value={this.state.fullName}
-                                    placeholder="Full name"
+                                    placeholder={(errors.fullName? `${errors.fullName}` : 'Full Name')}
                                     onChange={this.onChange}/>
                                     
                             </div>
@@ -74,10 +93,10 @@ class Register extends Component {
 
                                 <input
                                     type="password"
-                                    className="form-control input-custom-style mb-4"
+                                    className={'form-control input-custom-style mb-4 ' + (errors.password? 'is-invalid' : '')}
                                     name="password"
                                     value={this.state.password}
-                                    placeholder="Password"
+                                    placeholder={(errors.password? `${errors.password}` : 'Password')}
                                     onChange={this.onChange}/>
                                   
                             </div>
@@ -85,10 +104,10 @@ class Register extends Component {
 
                                 <input
                                     type="password"
-                                    className="form-control input-custom-style"
+                                    className={'form-control input-custom-style ' + (errors.confirmPassword? 'is-invalid' : '')}
                                     name="confirmPassword"
                                     value={this.state.confirmPassword}
-                                    placeholder="Confrim Password"
+                                    placeholder={(errors.confirmPassword? `${errors.confirmPassword}` : 'Confirm Password')}
                                     onChange={this.onChange}
                                     />
                                     
@@ -113,9 +132,11 @@ class Register extends Component {
 }
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.object.isRequired,
+    security: PropTypes.object.isRequired
 }
 const mapStateToProps = state =>({
-    errors: state.errors
+    errors: state.errors,
+    security: state.security
 });
-export default connect(null,{ registerUser })(Register);
+export default connect(mapStateToProps,{ registerUser })(Register);

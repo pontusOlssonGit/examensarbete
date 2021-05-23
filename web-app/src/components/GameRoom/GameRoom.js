@@ -123,8 +123,8 @@ class GameRoom extends Component {
                     <Header/>
                     <div className="container-top-game-room">
                         <div className="row">
-                            <div className="col-3"></div>
-                            <div className="col-6 game-header">
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-6 col-sm-12 game-header mt-3">
                                 <div className="row">
                                     <div className="col-4">
                                         <p className="game-h-text">Question number: {this.state.questionNumber + 1}/10</p>
@@ -142,8 +142,8 @@ class GameRoom extends Component {
                     <div className="container-middle">
 
                         <div className="row">
-                            <div className="col-3"></div>
-                            <div className="col-6 game-main">
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-6 col-sm-12 game-main">
                                 <div className="row time-left-meter-div">
                                     <div className="col-1 gutter-time-meter"></div>
                                     <div className="col-1">
@@ -228,8 +228,8 @@ class GameRoom extends Component {
                     </div>
                     <div className="container-bottom-game-room">
                         <div className="row">
-                            <div className="col-3"></div>
-                            <div className="col-6 game-alternatives">
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-6 col-sm-12 game-alternatives">
                                 <div className="row">
                                     <div className="col-3">
                                         <button

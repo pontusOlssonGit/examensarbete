@@ -8,6 +8,7 @@
 
 }
 
+
 .quizland-logo{
     font-size: 3rem;
     color: #f72585 !important;
@@ -29,8 +30,10 @@
     border-radius: 0.5rem;
 }
 .hr-style{
-    min-height: 0.2rem;
-    color: gray;
+    background: linear-gradient(to right, #0F2027, #2C5364) !important;
+    height: 0.1rem !important;
+    -webkit-filter:blur(1px);
+    border-radius: 1%;
 }
 .button-center{
     min-width: 100% !important;
@@ -53,4 +56,7 @@
 .question-mark-4{
     transform:rotateZ(-13deg) !important;
     color: #f72585 !important;
+}
+.error-custom-p{
+    margin-bottom: 0 !important;
 }

@@ -6,3 +6,29 @@
 .small-link:hover{
     color: #4cc9f0 !important;
 }
+
+.header-row{
+    border-top-left-radius: 1rem;
+    background-color: white;
+    border-bottom-left-radius: 1rem;
+}
+
+.header-row-p{
+    color: gray;
+    transition: ease-in-out 400ms;
+    font-family: 'RocknRoll One', sans-serif;
+
+}
+.header-row-p:hover{
+    color: #f72585;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.header-row-p-fullName{
+    text-align: left !important;
+    margin-left: 1rem;
+}
+.header-row-p-fullName:hover{
+    color: #4cc9f0;
+    text-align: left !important;
+}

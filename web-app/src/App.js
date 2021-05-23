@@ -2,7 +2,7 @@ import './App.css';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import LandingPage from './components/LandingPage/LandingPage';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import AddQuestion from './components/QuestionView/Question/AddQuestion';
 import {Provider} from 'react-redux';
 import store from './store';
@@ -14,6 +14,30 @@ import QuestionViewCategory from './components/QuestionView/QuestionViewCategory
 import GameRoom from './components/GameRoom/GameRoom';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import jwtDecode from 'jwt-decode';
+import setToken from './utils/setToken';
+import { SET_CURRENT_USER } from './actions/types';
+import { logout } from './actions/securityActions';
+import SecuredRoute from './utils/secureRoute';
+
+const token = localStorage.token;
+
+if(token){
+    setToken(token)
+    const decodedToken = jwtDecode(token);
+    store.dispatch({
+        type: SET_CURRENT_USER,
+        payload: decodedToken
+    })
+
+    const currentTime = Date.now()/1000
+    if(decodedToken.exp < currentTime){
+        store.dispatch(logout())
+        window.location.href="/"
+    }
+    
+    
+}
 
 function App() {
     return (
@@ -27,15 +51,16 @@ function App() {
 
 
 
-
-                    <Route exact path="/question-view" component={QuestionView}/>
-                    <Route exact path="/category-view" component={CategoryView}/>
-                    <Route exact path="/admin-dashboard" component={AdminDashboard}/>
-                    <Route exact path="/add-question" component={AddQuestion}/>
-                    <Route exact path="/update-question/:id" component={UpdateQuestion}/>
-                    <Route exact path="/add-question-answer/:id" component={AddQuestionAnswer}/>
-                    <Route exact path="/category-view/:category" component={QuestionViewCategory}/>
-                    <Route exact path="/game-room/:category" component={GameRoom}/>
+                    <Switch>
+                    <SecuredRoute exact path="/question-view" component={QuestionView}/>
+                    <SecuredRoute exact path="/category-view" component={CategoryView}/>
+                    <SecuredRoute exact path="/admin-dashboard" component={AdminDashboard}/>
+                    <SecuredRoute exact path="/add-question" component={AddQuestion}/>
+                    <SecuredRoute exact path="/update-question/:id" component={UpdateQuestion}/>
+                    <SecuredRoute exact path="/add-question-answer/:id" component={AddQuestionAnswer}/>
+                    <SecuredRoute exact path="/category-view/:category" component={QuestionViewCategory}/>
+                    <SecuredRoute exact path="/game-room/:category" component={GameRoom}/>
+                    </Switch>
 
                 </div>
             </Router>
